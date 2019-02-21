@@ -1,0 +1,15 @@
+<h1>Weather Info</h1>
+<h2>Enter teh city  you would like to see.</h2>
+<%= form_tag index_path do %>
+    <%= text_field_tag :zipcode, nil, placeholder: "Zipcode" %>
+    <%= submit_tag "Check Weather" %>
+<% end %>
+
+<% if @location.blank? == false %>
+<p>Location <%= @location %></p>
+<p>Cloudiness <%= @cloudiness %></p>
+<p>Windiness <%= @windiness %></p>
+<p>Temp <%= @temp %></p>
+<% elsif @error.blank? == false %>
+<p>Error: <%= @error %></p>
+<% end %>
